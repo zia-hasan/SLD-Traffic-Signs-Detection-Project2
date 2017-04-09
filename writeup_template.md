@@ -14,14 +14,13 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./results/visualization.png "Visualization"
+[image1]: ./visualization.png "Visualization"
 [image2]: ./new_images/0.jpg "Traffic Sign 1"
 [image3]: ./new_images/1.jpg "Traffic Sign 2"
 [image4]: ./new_images/2.jpg "Traffic Sign 3"
 [image5]: ./new_images/3.jpg "Traffic Sign 4"
 [image6]: ./new_images/4.jpg "Traffic Sign 5"
-[image7]: ./new_images/5.jpg "Traffic Sign 6"
-[image8]: ./new_images/6.jpg "Traffic Sign 7"
+
 ## Rubric Points
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
@@ -102,11 +101,17 @@ I first used LeNet model by changing number of output units from 10 to 43 (numbe
 
 ####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
-Here are seven German traffic signs that I found on the web:
+Here are the five real German traffic signs that I found on Google Streetview:
 
-![alt text][image2] ![alt text][image3] ![alt text][image4] 
-![alt text][image5] ![alt text][image6] ![alt text][image7]
-![alt text][image8]
+![alt text][image2] This image should be relatively easy to classify but the aspect ratio is not 1:1
+
+![alt text][image3] There is a slight sheer in this image which may make it difficult to classify
+
+![alt text][image4] The stop sign here in this image is a small part of the image and the aspect ratio is also uneven which makes it difficult to classify
+
+![alt text][image5] The image is a little hazy and there is some shadow that appears like a black line there could be difficult to classify
+
+![alt text][image6] This one should be relatively easy to classify except that the image size is really small compared to other images.
 
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
@@ -115,16 +120,14 @@ Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Road work      		| Road work    									| 
-| Roundabout mandatory  | Roundabout mandatory 							|
-| Stop					| Stop											|
-| Children crossing	    | Children crossing					 			|
-| Keep right			| Keep right      							    |
-| Speed limit (60km/h)  | Speed limit (60km/h)                          |
-| Priority road         | Priority road                                 |
+| Right-of-way at the next intersection| Right-of-way at the next intersection | 
+| Keep right                    | Keep right 							|
+| No vehicles					| No vehicles							|
+| Yield	                        | Yield 					 			|
+| Ahead only			        | Ahead only      						|
 
 
-The model was able to correctly guess 7 out of the 7 traffic signs, which gives an accuracy of 100%. However, if I regenerate the model accuracy sometimes could go down.
+The model was able to correctly guess 5 out of the 5 traffic signs, which gives an accuracy of 100%. However, if I regenerate the model accuracy sometimes could go down.
 
 ####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
